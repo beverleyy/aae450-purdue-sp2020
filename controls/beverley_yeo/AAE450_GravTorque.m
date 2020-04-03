@@ -20,8 +20,8 @@ Re = 7378e+3;
 Rm = 3697e+3;
 
 % Moment of inertia
-Iy = 7.048e+12;
-Iz = 7.047e+12;
+Iy = 1.319e+12;
+Iz = 1.322e+12;
 
 % Angle
 theta = deg2rad(0.1);
