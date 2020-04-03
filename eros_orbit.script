@@ -1,0 +1,124 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2020-02-03 22:05:35
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Eros;
+GMAT Eros.DateFormat = UTCGregorian;
+GMAT Eros.Epoch = '27 Apr 2019 00:00:00.000';
+GMAT Eros.CoordinateSystem = Sun_ec;
+GMAT Eros.DisplayStateType = Keplerian;
+GMAT Eros.SMA = 218130489.1205806;
+GMAT Eros.ECC = 0.2227357205256894;
+GMAT Eros.INC = 10.82856732664407;
+GMAT Eros.RAAN = 304.3062624764607;
+GMAT Eros.AOP = 178.8213598069164;
+GMAT Eros.TA = 47.23946001427378;
+GMAT Eros.DryMass = 850;
+GMAT Eros.Cd = 2.2;
+GMAT Eros.Cr = 1.8;
+GMAT Eros.DragArea = 15;
+GMAT Eros.SRPArea = 1;
+GMAT Eros.NAIFId = -10000001;
+GMAT Eros.NAIFIdReferenceFrame = -9000001;
+GMAT Eros.OrbitColor = Red;
+GMAT Eros.TargetColor = Teal;
+GMAT Eros.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Eros.CdSigma = 1e+070;
+GMAT Eros.CrSigma = 1e+070;
+GMAT Eros.Id = 'SatId';
+GMAT Eros.Attitude = CoordinateSystemFixed;
+GMAT Eros.SPADSRPScaleFactor = 1;
+GMAT Eros.ModelFile = 'aura.3ds';
+GMAT Eros.ModelOffsetX = 0;
+GMAT Eros.ModelOffsetY = 0;
+GMAT Eros.ModelOffsetZ = 0;
+GMAT Eros.ModelRotationX = 0;
+GMAT Eros.ModelRotationY = 0;
+GMAT Eros.ModelRotationZ = 0;
+GMAT Eros.ModelScale = 1;
+GMAT Eros.AttitudeDisplayStateType = 'Quaternion';
+GMAT Eros.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Eros.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Eros.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel DefaultProp_ForceModel;
+GMAT DefaultProp_ForceModel.CentralBody = Sun;
+GMAT DefaultProp_ForceModel.PointMasses = {Sun};
+GMAT DefaultProp_ForceModel.Drag = None;
+GMAT DefaultProp_ForceModel.SRP = Off;
+GMAT DefaultProp_ForceModel.RelativisticCorrection = Off;
+GMAT DefaultProp_ForceModel.ErrorControl = RSSStep;
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator DefaultProp;
+GMAT DefaultProp.FM = DefaultProp_ForceModel;
+GMAT DefaultProp.Type = RungeKutta89;
+GMAT DefaultProp.InitialStepSize = 60;
+GMAT DefaultProp.Accuracy = 9.999999999999999e-012;
+GMAT DefaultProp.MinStep = 0.001;
+GMAT DefaultProp.MaxStep = 2700;
+GMAT DefaultProp.MaxStepAttempts = 50;
+GMAT DefaultProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- Coordinate Systems
+%----------------------------------------
+
+Create CoordinateSystem Sun_ec;
+GMAT Sun_ec.Origin = Sun;
+GMAT Sun_ec.Axes = MJ2000Ec;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+GMAT DefaultOrbitView.SolverIterations = Current;
+GMAT DefaultOrbitView.UpperLeft = [ 0.001764705882352941 0 ];
+GMAT DefaultOrbitView.Size = [ 0.8 0.8491761723700887 ];
+GMAT DefaultOrbitView.RelativeZOrder = 61;
+GMAT DefaultOrbitView.Maximized = false;
+GMAT DefaultOrbitView.Add = {Eros, Earth, Mars, Venus, Sun, Mercury};
+GMAT DefaultOrbitView.CoordinateSystem = Sun_ec;
+GMAT DefaultOrbitView.DrawObject = [ true true true true true true ];
+GMAT DefaultOrbitView.DataCollectFrequency = 1;
+GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.ShowPlot = true;
+GMAT DefaultOrbitView.MaxPlotPoints = 30000;
+GMAT DefaultOrbitView.ShowLabels = true;
+GMAT DefaultOrbitView.ViewPointReference = Sun;
+GMAT DefaultOrbitView.ViewPointVector = [ 0 0 981304891.205807 ];
+GMAT DefaultOrbitView.ViewDirection = Sun;
+GMAT DefaultOrbitView.ViewScaleFactor = 1;
+GMAT DefaultOrbitView.ViewUpCoordinateSystem = Sun_ec;
+GMAT DefaultOrbitView.ViewUpAxis = Z;
+GMAT DefaultOrbitView.EclipticPlane = Off;
+GMAT DefaultOrbitView.XYPlane = On;
+GMAT DefaultOrbitView.WireFrame = Off;
+GMAT DefaultOrbitView.Axes = On;
+GMAT DefaultOrbitView.Grid = Off;
+GMAT DefaultOrbitView.SunLine = Off;
+GMAT DefaultOrbitView.UseInitialView = On;
+GMAT DefaultOrbitView.StarCount = 7000;
+GMAT DefaultOrbitView.EnableStars = Off;
+GMAT DefaultOrbitView.EnableConstellations = On;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+Propagate DefaultProp(Eros) {Eros.Sun.OrbitPeriod = 1};
