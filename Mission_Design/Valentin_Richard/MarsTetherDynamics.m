@@ -115,7 +115,7 @@ plot(SimOut.t/60,SimOut.alpha*180/pi)
 title("In and out of plane angles over time")
 legend("beta","alpha")
 xlabel("Time (min)")
-ylabel("Out of plane angles (°)")
+ylabel("Out of plane angles (Â°)")
 annotation('textbox',[0.125 0 0 0.065],'String',"Plot made by Valentin RICHARD",'FitBoxToText','on');
 hold off
 
