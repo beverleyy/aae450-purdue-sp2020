@@ -1,6 +1,6 @@
 function G_T = antennaGain(A_eff,lambda)
 %% Code to calculate gain for transmitting antenna
-% Written by Adam Wooten
+% Written by Eric Smith
 % A_eff = effective area of antenna
 % lambda = wavelength of signal
 % the units of A_eff must be equal to the units of lambda^2
