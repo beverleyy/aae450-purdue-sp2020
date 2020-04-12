@@ -1,5 +1,5 @@
 function [x_dot] = cyclerPaxis(t,x,M,I)
-%eulerPaxis puts Euler's equations for principal axis in state variable
+%cyclerPaxis puts Euler's equations for principal axis in state variable
 %form
 Ix = I(1,1);
 Iy = I(2,2);
