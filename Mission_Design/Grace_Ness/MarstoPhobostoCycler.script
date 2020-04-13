@@ -1,0 +1,573 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2019-11-26 15:21:20
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Phobos;
+GMAT Phobos.DateFormat = UTCGregorian;
+GMAT Phobos.Epoch = '06 Nov 1991 12:00:00.000';
+GMAT Phobos.CoordinateSystem = MarsMJ200Eq;
+GMAT Phobos.DisplayStateType = Keplerian;
+GMAT Phobos.SMA = 9375.719999952242;
+GMAT Phobos.ECC = 0.01800000000405612;
+GMAT Phobos.INC = 0.009999999982653272;
+GMAT Phobos.RAAN = 0;
+GMAT Phobos.AOP = 360;
+GMAT Phobos.TA = 190.0000000048831;
+GMAT Phobos.DryMass = 850;
+GMAT Phobos.Cd = 2.2;
+GMAT Phobos.Cr = 1.8;
+GMAT Phobos.DragArea = 15;
+GMAT Phobos.SRPArea = 1;
+GMAT Phobos.NAIFId = -10005001;
+GMAT Phobos.NAIFIdReferenceFrame = -9005001;
+GMAT Phobos.OrbitColor = [255 255 128];
+GMAT Phobos.TargetColor = [128 255 255];
+GMAT Phobos.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Phobos.CdSigma = 1e+070;
+GMAT Phobos.CrSigma = 1e+070;
+GMAT Phobos.Id = 'SatId';
+GMAT Phobos.Attitude = CoordinateSystemFixed;
+GMAT Phobos.SPADSRPScaleFactor = 1;
+GMAT Phobos.ModelFile = 'aura.3ds';
+GMAT Phobos.ModelOffsetX = 0;
+GMAT Phobos.ModelOffsetY = 0;
+GMAT Phobos.ModelOffsetZ = 0;
+GMAT Phobos.ModelRotationX = 0;
+GMAT Phobos.ModelRotationY = 0;
+GMAT Phobos.ModelRotationZ = 0;
+GMAT Phobos.ModelScale = 1;
+GMAT Phobos.AttitudeDisplayStateType = 'Quaternion';
+GMAT Phobos.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Phobos.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Phobos.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Deimos;
+GMAT Deimos.DateFormat = UTCGregorian;
+GMAT Deimos.Epoch = '06 Nov 1991 12:00:00.000';
+GMAT Deimos.CoordinateSystem = MarsMJ200Eq;
+GMAT Deimos.DisplayStateType = Keplerian;
+GMAT Deimos.SMA = 23507.24000004247;
+GMAT Deimos.ECC = 0.0009999999987526005;
+GMAT Deimos.INC = 0.920000000000324;
+GMAT Deimos.RAAN = 0;
+GMAT Deimos.AOP = 0;
+GMAT Deimos.TA = 0;
+GMAT Deimos.DryMass = 850;
+GMAT Deimos.Cd = 2.2;
+GMAT Deimos.Cr = 1.8;
+GMAT Deimos.DragArea = 15;
+GMAT Deimos.SRPArea = 1;
+GMAT Deimos.NAIFId = -10005001;
+GMAT Deimos.NAIFIdReferenceFrame = -9005001;
+GMAT Deimos.OrbitColor = [0 128 64];
+GMAT Deimos.TargetColor = Teal;
+GMAT Deimos.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Deimos.CdSigma = 1e+070;
+GMAT Deimos.CrSigma = 1e+070;
+GMAT Deimos.Id = 'SatId';
+GMAT Deimos.Attitude = CoordinateSystemFixed;
+GMAT Deimos.SPADSRPScaleFactor = 1;
+GMAT Deimos.ModelFile = 'aura.3ds';
+GMAT Deimos.ModelOffsetX = 0;
+GMAT Deimos.ModelOffsetY = 0;
+GMAT Deimos.ModelOffsetZ = 0;
+GMAT Deimos.ModelRotationX = 0;
+GMAT Deimos.ModelRotationY = 0;
+GMAT Deimos.ModelRotationZ = 0;
+GMAT Deimos.ModelScale = 1;
+GMAT Deimos.AttitudeDisplayStateType = 'Quaternion';
+GMAT Deimos.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Deimos.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Deimos.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Taxi2_M;
+GMAT Taxi2_M.DateFormat = UTCGregorian;
+GMAT Taxi2_M.Epoch = '06 Nov 1991 19:51:21.000';
+GMAT Taxi2_M.CoordinateSystem = MarsMJ200Eq;
+GMAT Taxi2_M.DisplayStateType = Cartesian;
+GMAT Taxi2_M.X = -2183;
+GMAT Taxi2_M.Y = -2325;
+GMAT Taxi2_M.Z = 1148;
+GMAT Taxi2_M.VX = 3.177700000000002;
+GMAT Taxi2_M.VY = -3.344900000000003;
+GMAT Taxi2_M.VZ = -0.8641100000000002;
+GMAT Taxi2_M.DryMass = 850;
+GMAT Taxi2_M.Cd = 2.2;
+GMAT Taxi2_M.Cr = 1.8;
+GMAT Taxi2_M.DragArea = 15;
+GMAT Taxi2_M.SRPArea = 1;
+GMAT Taxi2_M.NAIFId = -10005001;
+GMAT Taxi2_M.NAIFIdReferenceFrame = -9005001;
+GMAT Taxi2_M.OrbitColor = [255 170 213];
+GMAT Taxi2_M.TargetColor = [255 162 208];
+GMAT Taxi2_M.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Taxi2_M.CdSigma = 1e+070;
+GMAT Taxi2_M.CrSigma = 1e+070;
+GMAT Taxi2_M.Id = 'SatId';
+GMAT Taxi2_M.Attitude = CoordinateSystemFixed;
+GMAT Taxi2_M.SPADSRPScaleFactor = 1;
+GMAT Taxi2_M.ModelFile = 'aura.3ds';
+GMAT Taxi2_M.ModelOffsetX = 0;
+GMAT Taxi2_M.ModelOffsetY = 0;
+GMAT Taxi2_M.ModelOffsetZ = 0;
+GMAT Taxi2_M.ModelRotationX = 0;
+GMAT Taxi2_M.ModelRotationY = 0;
+GMAT Taxi2_M.ModelRotationZ = 0;
+GMAT Taxi2_M.ModelScale = 1;
+GMAT Taxi2_M.AttitudeDisplayStateType = 'Quaternion';
+GMAT Taxi2_M.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Taxi2_M.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Taxi2_M.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Taxi1_M;
+GMAT Taxi1_M.DateFormat = UTCGregorian;
+GMAT Taxi1_M.Epoch = '06 Nov 1991 19:39:33.000';
+GMAT Taxi1_M.CoordinateSystem = MarsMJ200Eq;
+GMAT Taxi1_M.DisplayStateType = Cartesian;
+GMAT Taxi1_M.X = -2183;
+GMAT Taxi1_M.Y = -2325;
+GMAT Taxi1_M.Z = 1148;
+GMAT Taxi1_M.VX = 3.177700000000002;
+GMAT Taxi1_M.VY = -3.344900000000003;
+GMAT Taxi1_M.VZ = -0.8641100000000002;
+GMAT Taxi1_M.DryMass = 850;
+GMAT Taxi1_M.Cd = 2.2;
+GMAT Taxi1_M.Cr = 1.8;
+GMAT Taxi1_M.DragArea = 15;
+GMAT Taxi1_M.SRPArea = 1;
+GMAT Taxi1_M.NAIFId = -10005001;
+GMAT Taxi1_M.NAIFIdReferenceFrame = -9005001;
+GMAT Taxi1_M.OrbitColor = [255 170 213];
+GMAT Taxi1_M.TargetColor = [255 162 208];
+GMAT Taxi1_M.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Taxi1_M.CdSigma = 1e+070;
+GMAT Taxi1_M.CrSigma = 1e+070;
+GMAT Taxi1_M.Id = 'SatId';
+GMAT Taxi1_M.Attitude = CoordinateSystemFixed;
+GMAT Taxi1_M.SPADSRPScaleFactor = 1;
+GMAT Taxi1_M.ModelFile = 'aura.3ds';
+GMAT Taxi1_M.ModelOffsetX = 0;
+GMAT Taxi1_M.ModelOffsetY = 0;
+GMAT Taxi1_M.ModelOffsetZ = 0;
+GMAT Taxi1_M.ModelRotationX = 0;
+GMAT Taxi1_M.ModelRotationY = 0;
+GMAT Taxi1_M.ModelRotationZ = 0;
+GMAT Taxi1_M.ModelScale = 1;
+GMAT Taxi1_M.AttitudeDisplayStateType = 'Quaternion';
+GMAT Taxi1_M.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Taxi1_M.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Taxi1_M.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Taxi3_M;
+GMAT Taxi3_M.DateFormat = UTCGregorian;
+GMAT Taxi3_M.Epoch = '06 Nov 1991 20:03:09.000';
+GMAT Taxi3_M.CoordinateSystem = MarsMJ200Eq;
+GMAT Taxi3_M.DisplayStateType = Cartesian;
+GMAT Taxi3_M.X = -2183;
+GMAT Taxi3_M.Y = -2325;
+GMAT Taxi3_M.Z = 1148;
+GMAT Taxi3_M.VX = 3.177700000000002;
+GMAT Taxi3_M.VY = -3.344900000000003;
+GMAT Taxi3_M.VZ = -0.8641100000000019;
+GMAT Taxi3_M.DryMass = 850;
+GMAT Taxi3_M.Cd = 2.2;
+GMAT Taxi3_M.Cr = 1.8;
+GMAT Taxi3_M.DragArea = 15;
+GMAT Taxi3_M.SRPArea = 1;
+GMAT Taxi3_M.NAIFId = -10005001;
+GMAT Taxi3_M.NAIFIdReferenceFrame = -9005001;
+GMAT Taxi3_M.OrbitColor = [255 170 213];
+GMAT Taxi3_M.TargetColor = [255 162 208];
+GMAT Taxi3_M.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Taxi3_M.CdSigma = 1e+070;
+GMAT Taxi3_M.CrSigma = 1e+070;
+GMAT Taxi3_M.Id = 'SatId';
+GMAT Taxi3_M.Attitude = CoordinateSystemFixed;
+GMAT Taxi3_M.SPADSRPScaleFactor = 1;
+GMAT Taxi3_M.ModelFile = 'aura.3ds';
+GMAT Taxi3_M.ModelOffsetX = 0;
+GMAT Taxi3_M.ModelOffsetY = 0;
+GMAT Taxi3_M.ModelOffsetZ = 0;
+GMAT Taxi3_M.ModelRotationX = 0;
+GMAT Taxi3_M.ModelRotationY = 0;
+GMAT Taxi3_M.ModelRotationZ = 0;
+GMAT Taxi3_M.ModelScale = 1;
+GMAT Taxi3_M.AttitudeDisplayStateType = 'Quaternion';
+GMAT Taxi3_M.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Taxi3_M.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Taxi3_M.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Taxi1_P;
+GMAT Taxi1_P.DateFormat = UTCGregorian;
+GMAT Taxi1_P.Epoch = '07 Nov 1991 10:43:09.000';
+GMAT Taxi1_P.CoordinateSystem = MarsMJ200Eq;
+GMAT Taxi1_P.DisplayStateType = Keplerian;
+GMAT Taxi1_P.SMA = 9375.720000062247;
+GMAT Taxi1_P.ECC = 0.01799999999807698;
+GMAT Taxi1_P.INC = 0.009999999982653272;
+GMAT Taxi1_P.RAAN = 0;
+GMAT Taxi1_P.AOP = 0;
+GMAT Taxi1_P.TA = 180;
+GMAT Taxi1_P.DryMass = 850;
+GMAT Taxi1_P.Cd = 2.2;
+GMAT Taxi1_P.Cr = 1.8;
+GMAT Taxi1_P.DragArea = 15;
+GMAT Taxi1_P.SRPArea = 1;
+GMAT Taxi1_P.NAIFId = -10005001;
+GMAT Taxi1_P.NAIFIdReferenceFrame = -9005001;
+GMAT Taxi1_P.OrbitColor = [128 255 255];
+GMAT Taxi1_P.TargetColor = [128 255 255];
+GMAT Taxi1_P.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Taxi1_P.CdSigma = 1e+070;
+GMAT Taxi1_P.CrSigma = 1e+070;
+GMAT Taxi1_P.Id = 'SatId';
+GMAT Taxi1_P.Attitude = CoordinateSystemFixed;
+GMAT Taxi1_P.SPADSRPScaleFactor = 1;
+GMAT Taxi1_P.ModelFile = 'aura.3ds';
+GMAT Taxi1_P.ModelOffsetX = 0;
+GMAT Taxi1_P.ModelOffsetY = 0;
+GMAT Taxi1_P.ModelOffsetZ = 0;
+GMAT Taxi1_P.ModelRotationX = 0;
+GMAT Taxi1_P.ModelRotationY = 0;
+GMAT Taxi1_P.ModelRotationZ = 0;
+GMAT Taxi1_P.ModelScale = 1;
+GMAT Taxi1_P.AttitudeDisplayStateType = 'Quaternion';
+GMAT Taxi1_P.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Taxi1_P.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Taxi1_P.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Taxi2_P;
+GMAT Taxi2_P.DateFormat = UTCGregorian;
+GMAT Taxi2_P.Epoch = '07 Nov 1991 10:43:09.000';
+GMAT Taxi2_P.CoordinateSystem = MarsMJ200Eq;
+GMAT Taxi2_P.DisplayStateType = Keplerian;
+GMAT Taxi2_P.SMA = 9375.720000062247;
+GMAT Taxi2_P.ECC = 0.01799999999807698;
+GMAT Taxi2_P.INC = 0.009999999982653272;
+GMAT Taxi2_P.RAAN = 0;
+GMAT Taxi2_P.AOP = 0;
+GMAT Taxi2_P.TA = 180;
+GMAT Taxi2_P.DryMass = 850;
+GMAT Taxi2_P.Cd = 2.2;
+GMAT Taxi2_P.Cr = 1.8;
+GMAT Taxi2_P.DragArea = 15;
+GMAT Taxi2_P.SRPArea = 1;
+GMAT Taxi2_P.NAIFId = -10005001;
+GMAT Taxi2_P.NAIFIdReferenceFrame = -9005001;
+GMAT Taxi2_P.OrbitColor = [128 255 255];
+GMAT Taxi2_P.TargetColor = [128 255 255];
+GMAT Taxi2_P.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Taxi2_P.CdSigma = 1e+070;
+GMAT Taxi2_P.CrSigma = 1e+070;
+GMAT Taxi2_P.Id = 'SatId';
+GMAT Taxi2_P.Attitude = CoordinateSystemFixed;
+GMAT Taxi2_P.SPADSRPScaleFactor = 1;
+GMAT Taxi2_P.ModelFile = 'aura.3ds';
+GMAT Taxi2_P.ModelOffsetX = 0;
+GMAT Taxi2_P.ModelOffsetY = 0;
+GMAT Taxi2_P.ModelOffsetZ = 0;
+GMAT Taxi2_P.ModelRotationX = 0;
+GMAT Taxi2_P.ModelRotationY = 0;
+GMAT Taxi2_P.ModelRotationZ = 0;
+GMAT Taxi2_P.ModelScale = 1;
+GMAT Taxi2_P.AttitudeDisplayStateType = 'Quaternion';
+GMAT Taxi2_P.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Taxi2_P.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Taxi2_P.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Taxi3_P;
+GMAT Taxi3_P.DateFormat = UTCGregorian;
+GMAT Taxi3_P.Epoch = '07 Nov 1991 10:43:09.000';
+GMAT Taxi3_P.CoordinateSystem = MarsMJ200Eq;
+GMAT Taxi3_P.DisplayStateType = Keplerian;
+GMAT Taxi3_P.SMA = 9375.720000062247;
+GMAT Taxi3_P.ECC = 0.01799999999807698;
+GMAT Taxi3_P.INC = 0.009999999982653272;
+GMAT Taxi3_P.RAAN = 0;
+GMAT Taxi3_P.AOP = 0;
+GMAT Taxi3_P.TA = 180;
+GMAT Taxi3_P.DryMass = 850;
+GMAT Taxi3_P.Cd = 2.2;
+GMAT Taxi3_P.Cr = 1.8;
+GMAT Taxi3_P.DragArea = 15;
+GMAT Taxi3_P.SRPArea = 1;
+GMAT Taxi3_P.NAIFId = -10005001;
+GMAT Taxi3_P.NAIFIdReferenceFrame = -9005001;
+GMAT Taxi3_P.OrbitColor = [128 255 255];
+GMAT Taxi3_P.TargetColor = [128 255 255];
+GMAT Taxi3_P.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Taxi3_P.CdSigma = 1e+070;
+GMAT Taxi3_P.CrSigma = 1e+070;
+GMAT Taxi3_P.Id = 'SatId';
+GMAT Taxi3_P.Attitude = CoordinateSystemFixed;
+GMAT Taxi3_P.SPADSRPScaleFactor = 1;
+GMAT Taxi3_P.ModelFile = 'aura.3ds';
+GMAT Taxi3_P.ModelOffsetX = 0;
+GMAT Taxi3_P.ModelOffsetY = 0;
+GMAT Taxi3_P.ModelOffsetZ = 0;
+GMAT Taxi3_P.ModelRotationX = 0;
+GMAT Taxi3_P.ModelRotationY = 0;
+GMAT Taxi3_P.ModelRotationZ = 0;
+GMAT Taxi3_P.ModelScale = 1;
+GMAT Taxi3_P.AttitudeDisplayStateType = 'Quaternion';
+GMAT Taxi3_P.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Taxi3_P.AttitudeCoordinateSystem = MJ2000Ec;
+GMAT Taxi3_P.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel Propagator1_ForceModel;
+GMAT Propagator1_ForceModel.CentralBody = Earth;
+GMAT Propagator1_ForceModel.PrimaryBodies = {Earth};
+GMAT Propagator1_ForceModel.Drag = None;
+GMAT Propagator1_ForceModel.SRP = Off;
+GMAT Propagator1_ForceModel.RelativisticCorrection = Off;
+GMAT Propagator1_ForceModel.ErrorControl = RSSStep;
+GMAT Propagator1_ForceModel.GravityField.Earth.Degree = 4;
+GMAT Propagator1_ForceModel.GravityField.Earth.Order = 4;
+GMAT Propagator1_ForceModel.GravityField.Earth.StmLimit = 100;
+GMAT Propagator1_ForceModel.GravityField.Earth.PotentialFile = 'JGM2.cof';
+GMAT Propagator1_ForceModel.GravityField.Earth.TideModel = 'None';
+
+Create ForceModel Propagator2_ForceModel;
+GMAT Propagator2_ForceModel.CentralBody = Earth;
+GMAT Propagator2_ForceModel.PrimaryBodies = {Earth};
+GMAT Propagator2_ForceModel.Drag = None;
+GMAT Propagator2_ForceModel.SRP = Off;
+GMAT Propagator2_ForceModel.RelativisticCorrection = Off;
+GMAT Propagator2_ForceModel.ErrorControl = RSSStep;
+GMAT Propagator2_ForceModel.GravityField.Earth.Degree = 4;
+GMAT Propagator2_ForceModel.GravityField.Earth.Order = 4;
+GMAT Propagator2_ForceModel.GravityField.Earth.StmLimit = 100;
+GMAT Propagator2_ForceModel.GravityField.Earth.PotentialFile = 'JGM2.cof';
+GMAT Propagator2_ForceModel.GravityField.Earth.TideModel = 'None';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel DefaultProp_ForceModel;
+GMAT DefaultProp_ForceModel.CentralBody = Mars;
+GMAT DefaultProp_ForceModel.PrimaryBodies = {Mars};
+GMAT DefaultProp_ForceModel.Drag = None;
+GMAT DefaultProp_ForceModel.SRP = Off;
+GMAT DefaultProp_ForceModel.RelativisticCorrection = Off;
+GMAT DefaultProp_ForceModel.ErrorControl = RSSStep;
+GMAT DefaultProp_ForceModel.GravityField.Mars.Degree = 4;
+GMAT DefaultProp_ForceModel.GravityField.Mars.Order = 4;
+GMAT DefaultProp_ForceModel.GravityField.Mars.StmLimit = 100;
+GMAT DefaultProp_ForceModel.GravityField.Mars.PotentialFile = 'Mars50c.cof';
+GMAT DefaultProp_ForceModel.GravityField.Mars.TideModel = 'None';
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator DefaultProp;
+GMAT DefaultProp.FM = DefaultProp_ForceModel;
+GMAT DefaultProp.Type = RungeKutta89;
+GMAT DefaultProp.InitialStepSize = 1;
+GMAT DefaultProp.Accuracy = 9.999999999999999e-012;
+GMAT DefaultProp.MinStep = 0.0001;
+GMAT DefaultProp.MaxStep = 5;
+GMAT DefaultProp.MaxStepAttempts = 30;
+GMAT DefaultProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- Burns
+%----------------------------------------
+
+Create ImpulsiveBurn Burn1;
+GMAT Burn1.CoordinateSystem = Local;
+GMAT Burn1.Origin = Earth;
+GMAT Burn1.Axes = MJ2000Eq;
+GMAT Burn1.Element1 = -0.1619958;
+GMAT Burn1.Element2 = 0.20346043;
+GMAT Burn1.Element3 = -0.3598985;
+GMAT Burn1.DecrementMass = false;
+GMAT Burn1.Isp = 300;
+GMAT Burn1.GravitationalAccel = 9.810000000000001;
+
+Create ImpulsiveBurn Burn2;
+GMAT Burn2.CoordinateSystem = Local;
+GMAT Burn2.Origin = Earth;
+GMAT Burn2.Axes = MJ2000Eq;
+GMAT Burn2.Element1 = 0.05;
+GMAT Burn2.Element2 = 0.05;
+GMAT Burn2.Element3 = 0.1;
+GMAT Burn2.DecrementMass = false;
+GMAT Burn2.Isp = 300;
+GMAT Burn2.GravitationalAccel = 9.810000000000001;
+
+Create ImpulsiveBurn Burn3;
+GMAT Burn3.CoordinateSystem = Local;
+GMAT Burn3.Origin = Earth;
+GMAT Burn3.Axes = MJ2000Eq;
+GMAT Burn3.Element1 = -0.05;
+GMAT Burn3.Element2 = -0.05;
+GMAT Burn3.Element3 = -0.1;
+GMAT Burn3.DecrementMass = false;
+GMAT Burn3.Isp = 300;
+GMAT Burn3.GravitationalAccel = 9.810000000000001;
+
+Create ImpulsiveBurn Tether1;
+GMAT Tether1.CoordinateSystem = Local;
+GMAT Tether1.Origin = Earth;
+GMAT Tether1.Axes = MJ2000Eq;
+GMAT Tether1.Element1 = 1.96;
+GMAT Tether1.Element2 = 0;
+GMAT Tether1.Element3 = 0;
+GMAT Tether1.DecrementMass = false;
+GMAT Tether1.Isp = 300;
+GMAT Tether1.GravitationalAccel = 9.810000000000001;
+
+Create ImpulsiveBurn Tether2;
+GMAT Tether2.CoordinateSystem = Local;
+GMAT Tether2.Origin = Earth;
+GMAT Tether2.Axes = MJ2000Eq;
+GMAT Tether2.Element1 = 0;
+GMAT Tether2.Element2 = 0.095;
+GMAT Tether2.Element3 = 0;
+GMAT Tether2.DecrementMass = false;
+GMAT Tether2.Isp = 300;
+GMAT Tether2.GravitationalAccel = 9.810000000000001;
+
+Create ImpulsiveBurn Tether3;
+GMAT Tether3.CoordinateSystem = Local;
+GMAT Tether3.Origin = Earth;
+GMAT Tether3.Axes = MJ2000Eq;
+GMAT Tether3.Element1 = 0;
+GMAT Tether3.Element2 = -0.1;
+GMAT Tether3.Element3 = 0;
+GMAT Tether3.DecrementMass = false;
+GMAT Tether3.Isp = 300;
+GMAT Tether3.GravitationalAccel = 9.810000000000001;
+
+%----------------------------------------
+%---------- Coordinate Systems
+%----------------------------------------
+
+Create CoordinateSystem MJ2000Ec;
+GMAT MJ2000Ec.Origin = Sun;
+GMAT MJ2000Ec.Axes = MJ2000Ec;
+
+Create CoordinateSystem MarsMJ200Eq;
+GMAT MarsMJ200Eq.Origin = Mars;
+GMAT MarsMJ200Eq.Axes = MJ2000Eq;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+GMAT DefaultOrbitView.SolverIterations = Current;
+GMAT DefaultOrbitView.UpperLeft = [ 0 0 ];
+GMAT DefaultOrbitView.Size = [ 0.2233704292527822 0.4407806191117093 ];
+GMAT DefaultOrbitView.RelativeZOrder = 34;
+GMAT DefaultOrbitView.Maximized = true;
+GMAT DefaultOrbitView.Add = {Deimos, Phobos, Taxi2_M, Taxi1_M, Taxi3_M, Taxi1_P, Taxi2_P, Taxi3_P, Mars};
+GMAT DefaultOrbitView.CoordinateSystem = MarsMJ200Eq;
+GMAT DefaultOrbitView.DrawObject = [ true true true true true true true true true ];
+GMAT DefaultOrbitView.DataCollectFrequency = 1;
+GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.ShowPlot = true;
+GMAT DefaultOrbitView.MaxPlotPoints = 20000;
+GMAT DefaultOrbitView.ShowLabels = true;
+GMAT DefaultOrbitView.ViewPointReference = Mars;
+GMAT DefaultOrbitView.ViewPointVector = Phobos;
+GMAT DefaultOrbitView.ViewDirection = Mars;
+GMAT DefaultOrbitView.ViewScaleFactor = 3;
+GMAT DefaultOrbitView.ViewUpCoordinateSystem = MarsMJ200Eq;
+GMAT DefaultOrbitView.ViewUpAxis = Z;
+GMAT DefaultOrbitView.EclipticPlane = Off;
+GMAT DefaultOrbitView.XYPlane = On;
+GMAT DefaultOrbitView.WireFrame = Off;
+GMAT DefaultOrbitView.Axes = On;
+GMAT DefaultOrbitView.Grid = Off;
+GMAT DefaultOrbitView.SunLine = Off;
+GMAT DefaultOrbitView.UseInitialView = On;
+GMAT DefaultOrbitView.StarCount = 7000;
+GMAT DefaultOrbitView.EnableStars = On;
+GMAT DefaultOrbitView.EnableConstellations = Off;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+Propagate 'Phobos1rev' DefaultProp(Phobos, Deimos) {Phobos.ElapsedSecs = 27573};
+Propagate 'Taxi1' DefaultProp(Phobos, Deimos, Taxi1_M) {Phobos.ElapsedSecs = 708};
+Propagate 'Taxi2' DefaultProp(Phobos, Deimos, Taxi1_M, Taxi2_M) {Phobos.ElapsedSecs = 708};
+Propagate 'Taxi3' DefaultProp(Phobos, Deimos, Taxi1_M, Taxi2_M, Taxi3_M) {Phobos.ElapsedSecs = 20784};
+Maneuver Burn1(Taxi1_M);
+Maneuver Burn2(Taxi1_M);
+Propagate DefaultProp(Phobos, Deimos, Taxi1_M, Taxi2_M, Taxi3_M) {Phobos.ElapsedSecs = 708};
+Maneuver Burn1(Taxi2_M);
+Propagate DefaultProp(Phobos, Deimos, Taxi1_M, Taxi2_M, Taxi3_M) {Phobos.ElapsedSecs = 708};
+Maneuver Burn1(Taxi3_M);
+Maneuver Burn3(Taxi3_M);
+Propagate DefaultProp(Phobos, Deimos, Taxi1_M, Taxi2_M, Taxi3_M) {Phobos.ElapsedSecs = 28400};
+Propagate DefaultProp(Phobos, Deimos, Taxi2_M, Taxi3_M) {Phobos.ElapsedSecs = 800};
+Propagate DefaultProp(Phobos, Deimos, Taxi3_M) {Phobos.ElapsedSecs = 1400};
+Propagate DefaultProp(Phobos, Deimos, Taxi1_P, Taxi2_P, Taxi3_P) {Phobos.ElapsedSecs = 6516};
+Maneuver Tether1(Taxi1_P);
+Maneuver Tether2(Taxi1_P);
+Propagate DefaultProp(Phobos, Deimos, Taxi1_P, Taxi2_P, Taxi3_P) {Phobos.ElapsedSecs = 364};
+Maneuver Tether1(Taxi2_P);
+Propagate DefaultProp(Phobos, Deimos, Taxi1_P, Taxi2_P, Taxi3_P) {Phobos.ElapsedSecs = 364};
+Maneuver Tether1(Taxi3_P);
+Maneuver Tether3(Taxi3_P);
+Propagate DefaultProp(Phobos, Deimos, Taxi1_P, Taxi2_P, Taxi3_P) {Phobos.ElapsedSecs = 20000};
