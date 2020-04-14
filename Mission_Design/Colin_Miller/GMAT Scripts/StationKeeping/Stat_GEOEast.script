@@ -1,0 +1,232 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2020-03-05 15:44:26
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft LEOSat;
+GMAT LEOSat.DateFormat = UTCGregorian;
+GMAT LEOSat.Epoch = '05 Jan 2010 00:00:00.000';
+GMAT LEOSat.CoordinateSystem = EarthMJ2000Eq;
+GMAT LEOSat.DisplayStateType = Keplerian;
+GMAT LEOSat.SMA = 42164.16941268736;
+GMAT LEOSat.ECC = 4.489929118107328e-016;
+GMAT LEOSat.INC = 0;
+GMAT LEOSat.RAAN = 0;
+GMAT LEOSat.AOP = 0;
+GMAT LEOSat.TA = 240;
+GMAT LEOSat.DryMass = 850;
+GMAT LEOSat.Cd = 2.2;
+GMAT LEOSat.Cr = 1.8;
+GMAT LEOSat.DragArea = 15;
+GMAT LEOSat.SRPArea = 1;
+GMAT LEOSat.NAIFId = -10000001;
+GMAT LEOSat.NAIFIdReferenceFrame = -9000001;
+GMAT LEOSat.OrbitColor = Red;
+GMAT LEOSat.TargetColor = Teal;
+GMAT LEOSat.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT LEOSat.CdSigma = 1e+070;
+GMAT LEOSat.CrSigma = 1e+070;
+GMAT LEOSat.Id = 'SatId';
+GMAT LEOSat.Attitude = CoordinateSystemFixed;
+GMAT LEOSat.SPADSRPScaleFactor = 1;
+GMAT LEOSat.ModelFile = 'aura.3ds';
+GMAT LEOSat.ModelOffsetX = 0;
+GMAT LEOSat.ModelOffsetY = 0;
+GMAT LEOSat.ModelOffsetZ = 0;
+GMAT LEOSat.ModelRotationX = 0;
+GMAT LEOSat.ModelRotationY = 0;
+GMAT LEOSat.ModelRotationZ = 0;
+GMAT LEOSat.ModelScale = 1;
+GMAT LEOSat.AttitudeDisplayStateType = 'Quaternion';
+GMAT LEOSat.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT LEOSat.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT LEOSat.EulerAngleSequence = '321';
+
+
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel LEOProp_ForceModel;
+GMAT LEOProp_ForceModel.CentralBody = Earth;
+GMAT LEOProp_ForceModel.PrimaryBodies = {Earth};
+GMAT LEOProp_ForceModel.PointMasses = {Luna, Sun};
+GMAT LEOProp_ForceModel.SRP = On;
+GMAT LEOProp_ForceModel.RelativisticCorrection = Off;
+GMAT LEOProp_ForceModel.ErrorControl = RSSStep;
+GMAT LEOProp_ForceModel.GravityField.Earth.Degree = 4;
+GMAT LEOProp_ForceModel.GravityField.Earth.Order = 4;
+GMAT LEOProp_ForceModel.GravityField.Earth.StmLimit = 100;
+GMAT LEOProp_ForceModel.GravityField.Earth.PotentialFile = 'JGM2.cof';
+GMAT LEOProp_ForceModel.GravityField.Earth.TideModel = 'None';
+GMAT LEOProp_ForceModel.SRP.Flux = 1367;
+GMAT LEOProp_ForceModel.SRP.SRPModel = Spherical;
+GMAT LEOProp_ForceModel.SRP.Nominal_Sun = 149597870.691;
+GMAT LEOProp_ForceModel.Drag.AtmosphereModel = JacchiaRoberts;
+GMAT LEOProp_ForceModel.Drag.HistoricWeatherSource = 'ConstantFluxAndGeoMag';
+GMAT LEOProp_ForceModel.Drag.PredictedWeatherSource = 'ConstantFluxAndGeoMag';
+GMAT LEOProp_ForceModel.Drag.CSSISpaceWeatherFile = 'SpaceWeather-All-v1.2.txt';
+GMAT LEOProp_ForceModel.Drag.SchattenFile = 'SchattenPredict.txt';
+GMAT LEOProp_ForceModel.Drag.F107 = 150;
+GMAT LEOProp_ForceModel.Drag.F107A = 150;
+GMAT LEOProp_ForceModel.Drag.MagneticIndex = 3;
+GMAT LEOProp_ForceModel.Drag.SchattenErrorModel = 'Nominal';
+GMAT LEOProp_ForceModel.Drag.SchattenTimingModel = 'NominalCycle';
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator LEOProp;
+GMAT LEOProp.FM = LEOProp_ForceModel;
+GMAT LEOProp.Type = RungeKutta89;
+GMAT LEOProp.InitialStepSize = 60;
+GMAT LEOProp.Accuracy = 9.999999999999999e-012;
+GMAT LEOProp.MinStep = 0.001;
+GMAT LEOProp.MaxStep = 2700;
+GMAT LEOProp.MaxStepAttempts = 50;
+GMAT LEOProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- Burns
+%----------------------------------------
+
+Create ImpulsiveBurn DeltaV;
+GMAT DeltaV.CoordinateSystem = Local;
+GMAT DeltaV.Origin = Earth;
+GMAT DeltaV.Axes = VNB;
+GMAT DeltaV.Element1 = 0;
+GMAT DeltaV.Element2 = 0;
+GMAT DeltaV.Element3 = 0;
+GMAT DeltaV.DecrementMass = false;
+GMAT DeltaV.Isp = 300;
+GMAT DeltaV.GravitationalAccel = 9.810000000000001;
+
+%----------------------------------------
+%---------- Solvers
+%----------------------------------------
+
+Create DifferentialCorrector DC;
+GMAT DC.ShowProgress = true;
+GMAT DC.ReportStyle = Normal;
+GMAT DC.ReportFile = 'DifferentialCorrectorDC1.data';
+GMAT DC.MaximumIterations = 25;
+GMAT DC.DerivativeMethod = ForwardDifference;
+GMAT DC.Algorithm = NewtonRaphson;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+GMAT DefaultOrbitView.SolverIterations = Current;
+GMAT DefaultOrbitView.UpperLeft = [ 0.6732603320381491 0.04831751509922347 ];
+GMAT DefaultOrbitView.Size = [ 1.066407629812787 0.4534081104400345 ];
+GMAT DefaultOrbitView.RelativeZOrder = 221;
+GMAT DefaultOrbitView.Maximized = false;
+GMAT DefaultOrbitView.Add = {LEOSat, Earth};
+GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.DrawObject = [ true true ];
+GMAT DefaultOrbitView.DataCollectFrequency = 1;
+GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.ShowPlot = true;
+GMAT DefaultOrbitView.MaxPlotPoints = 20000;
+GMAT DefaultOrbitView.ShowLabels = true;
+GMAT DefaultOrbitView.ViewPointReference = Earth;
+GMAT DefaultOrbitView.ViewPointVector = [ 30000 0 0 ];
+GMAT DefaultOrbitView.ViewDirection = Earth;
+GMAT DefaultOrbitView.ViewScaleFactor = 1;
+GMAT DefaultOrbitView.ViewUpCoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.ViewUpAxis = Z;
+GMAT DefaultOrbitView.EclipticPlane = Off;
+GMAT DefaultOrbitView.XYPlane = On;
+GMAT DefaultOrbitView.WireFrame = Off;
+GMAT DefaultOrbitView.Axes = On;
+GMAT DefaultOrbitView.Grid = Off;
+GMAT DefaultOrbitView.SunLine = Off;
+GMAT DefaultOrbitView.UseInitialView = On;
+GMAT DefaultOrbitView.StarCount = 7000;
+GMAT DefaultOrbitView.EnableStars = On;
+GMAT DefaultOrbitView.EnableConstellations = On;
+
+Create GroundTrackPlot DefaultGroundTrackPlot;
+GMAT DefaultGroundTrackPlot.SolverIterations = Current;
+GMAT DefaultGroundTrackPlot.UpperLeft = [ 0.006358177322500883 0.4577221742881795 ];
+GMAT DefaultGroundTrackPlot.Size = [ 1.066407629812787 0.4534081104400345 ];
+GMAT DefaultGroundTrackPlot.RelativeZOrder = 42;
+GMAT DefaultGroundTrackPlot.Maximized = false;
+GMAT DefaultGroundTrackPlot.Add = {LEOSat};
+GMAT DefaultGroundTrackPlot.DataCollectFrequency = 1;
+GMAT DefaultGroundTrackPlot.UpdatePlotFrequency = 50;
+GMAT DefaultGroundTrackPlot.NumPointsToRedraw = 0;
+GMAT DefaultGroundTrackPlot.ShowPlot = true;
+GMAT DefaultGroundTrackPlot.MaxPlotPoints = 20000;
+GMAT DefaultGroundTrackPlot.CentralBody = Earth;
+GMAT DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
+
+Create XYPlot XYPlot1;
+GMAT XYPlot1.SolverIterations = Current;
+GMAT XYPlot1.UpperLeft = [ -0.1197456729071 0.2571182053494392 ];
+GMAT XYPlot1.Size = [ 1.083009537265984 0.5772217428817946 ];
+GMAT XYPlot1.RelativeZOrder = 530;
+GMAT XYPlot1.Maximized = false;
+GMAT XYPlot1.XVariable = LEOSat.ElapsedDays;
+GMAT XYPlot1.YVariables = {LEOSat.Earth.Longitude};
+GMAT XYPlot1.ShowGrid = true;
+GMAT XYPlot1.ShowPlot = true;
+
+Create ReportFile ReportFile1;
+GMAT ReportFile1.SolverIterations = Current;
+GMAT ReportFile1.UpperLeft = [ 0.06958671847403744 0.181190681622088 ];
+GMAT ReportFile1.Size = [ 0.5983751324620276 0.7976704055220018 ];
+GMAT ReportFile1.RelativeZOrder = 420;
+GMAT ReportFile1.Maximized = false;
+GMAT ReportFile1.Filename = 'DVIB_GEOEast.txt';
+GMAT ReportFile1.Precision = 16;
+GMAT ReportFile1.Add = {LEOSat.ElapsedSecs, DeltaV.EarthMJ2000Eq.Element1, LEOSat.Earth.Longitude};
+GMAT ReportFile1.WriteHeaders = false;
+GMAT ReportFile1.LeftJustify = On;
+GMAT ReportFile1.ZeroFill = Off;
+GMAT ReportFile1.FixedWidth = false;
+GMAT ReportFile1.Delimiter = ',';
+GMAT ReportFile1.ColumnWidth = 23;
+GMAT ReportFile1.WriteReport = true;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+While LEOSat.ElapsedDays < 30
+   If LEOSat.Earth.Longitude < 135.5
+      Target DC {SolveMode = Solve, ExitMode = DiscardAndContinue, ShowProgressWindow = true};
+         Vary DC(DeltaV.Element1 = 0.0001, {Perturbation = 0.00001, Lower = -3.14159, Upper = 3.14159, MaxStep = 0.03, AdditiveScaleFactor = 0.0, MultiplicativeScaleFactor = 1.0});
+         Maneuver DeltaV(LEOSat);
+         Achieve DC(LEOSat.Earth.SMA = 42148.55160732933, {Tolerance = 0.001});
+         Propagate LEOProp(LEOSat) {LEOSat.Earth.Apoapsis};
+         Vary DC(DeltaV.Element1 = 0.0001, {Perturbation = 0.00001, Lower = -3.14159, Upper = 3.14159, MaxStep = 0.03, AdditiveScaleFactor = 0.0, MultiplicativeScaleFactor = 1.0});
+         Maneuver DeltaV(LEOSat);
+         Achieve DC(LEOSat.Earth.SMA = 42164.16941268738, {Tolerance = 0.001});
+      EndTarget;  % For targeter DC
+   EndIf;
+   If LEOSat.Earth.Longitude > 135.8
+      Target DC {SolveMode = Solve, ExitMode = DiscardAndContinue, ShowProgressWindow = true};
+         Vary DC(DeltaV.Element1 = 0.0001, {Perturbation = 0.0001, Lower = -3.14159, Upper = 3.14159, MaxStep = 0.03, AdditiveScaleFactor = 0.0, MultiplicativeScaleFactor = 1.0});
+         Maneuver DeltaV(LEOSat);
+         Achieve DC(LEOSat.Earth.SMA = 42179.78432612686, {Tolerance = 0.001});
+         Propagate LEOProp(LEOSat) {LEOSat.Earth.Periapsis};
+         Vary DC(DeltaV.Element1 = 0.0001, {Perturbation = 0.0001, Lower = -3.14159, Upper = 3.14159, MaxStep = 0.03, AdditiveScaleFactor = 0.0, MultiplicativeScaleFactor = 1.0});
+         Maneuver DeltaV(LEOSat);
+         Achieve DC(LEOSat.Earth.SMA = 42164.16941268738, {Tolerance = 0.001});
+      EndTarget;  % For targeter DC
+   EndIf;
+   While LEOSat.Earth.Longitude >= 135.5 & LEOSat.Earth.Longitude <= 135.8
+      Propagate LEOProp(LEOSat) {LEOSat.ElapsedSecs = 1000};
+   EndWhile;
+EndWhile;
