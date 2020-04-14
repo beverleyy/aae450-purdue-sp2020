@@ -1,0 +1,28 @@
+%Taxi Rendezvous position update position update
+r_0 = 12000000;
+r_d0 = 0;
+theta_0 = 0;
+theta_d0 = 2*pi/(24*3600);
+theta = 0:0.1:2*pi
+t = 0:100:24*3600;
+[t,y] = ode45(@orbit, t, [r_0 theta_0 r_d0 theta_d0]);
+a = y(:,1).*cos(y(:,2));
+b = y(:,1).*sin(y(:,2));
+c = zeros(size(a));
+plot3(a,b,c)
+grid on
+title("Rendezvous about the cycler (10^-^2)")
+xlabel("x")
+ylabel("y")
+zlabel("z")
+
+
+function x = orbit(t,y)
+    u = 6.67*10^(-11)*5.972*10^(24)
+    x(1) = y(3);
+    x(2) = y(4);
+    x(3) = -u/(y(1).^2)+(y(1)*(x(2).^2));
+    x(4) = -2*x(1)*x(2)/y(1);
+    x = [x(1) x(2) x(3) x(4)]';
+end
+
