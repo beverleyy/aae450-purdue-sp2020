@@ -1,0 +1,372 @@
+%General Mission Analysis Tool(GMAT) Script
+%Created: 2020-03-24 21:22:39
+
+
+%----------------------------------------
+%---------- Spacecraft
+%----------------------------------------
+
+Create Spacecraft Long1;
+GMAT Long1.DateFormat = TAIModJulian;
+GMAT Long1.Epoch = '21545';
+GMAT Long1.CoordinateSystem = EarthMJ2000Eq;
+GMAT Long1.DisplayStateType = Keplerian;
+GMAT Long1.SMA = 42163.99999999998;
+GMAT Long1.ECC = 0;
+GMAT Long1.INC = 0;
+GMAT Long1.RAAN = 0;
+GMAT Long1.AOP = 0;
+GMAT Long1.TA = 355;
+GMAT Long1.DryMass = 850;
+GMAT Long1.Cd = 2.2;
+GMAT Long1.Cr = 1.8;
+GMAT Long1.DragArea = 15;
+GMAT Long1.SRPArea = 1;
+GMAT Long1.NAIFId = -10000001;
+GMAT Long1.NAIFIdReferenceFrame = -9000001;
+GMAT Long1.OrbitColor = Red;
+GMAT Long1.TargetColor = Teal;
+GMAT Long1.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Long1.CdSigma = 1e+070;
+GMAT Long1.CrSigma = 1e+070;
+GMAT Long1.Id = 'SatId';
+GMAT Long1.Attitude = CoordinateSystemFixed;
+GMAT Long1.SPADSRPScaleFactor = 1;
+GMAT Long1.ModelFile = 'aura.3ds';
+GMAT Long1.ModelOffsetX = 0;
+GMAT Long1.ModelOffsetY = 0;
+GMAT Long1.ModelOffsetZ = 0;
+GMAT Long1.ModelRotationX = 0;
+GMAT Long1.ModelRotationY = 0;
+GMAT Long1.ModelRotationZ = 0;
+GMAT Long1.ModelScale = 1;
+GMAT Long1.AttitudeDisplayStateType = 'Quaternion';
+GMAT Long1.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Long1.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Long1.EulerAngleSequence = '321';
+
+Create Spacecraft Long2;
+GMAT Long2.DateFormat = TAIModJulian;
+GMAT Long2.Epoch = '21545';
+GMAT Long2.CoordinateSystem = EarthMJ2000Eq;
+GMAT Long2.DisplayStateType = Keplerian;
+GMAT Long2.SMA = 42164;
+GMAT Long2.ECC = 2.927566983599026e-016;
+GMAT Long2.INC = 0;
+GMAT Long2.RAAN = 0;
+GMAT Long2.AOP = 0;
+GMAT Long2.TA = 59.99999999999999;
+GMAT Long2.DryMass = 850;
+GMAT Long2.Cd = 2.2;
+GMAT Long2.Cr = 1.8;
+GMAT Long2.DragArea = 15;
+GMAT Long2.SRPArea = 1;
+GMAT Long2.NAIFId = -10000001;
+GMAT Long2.NAIFIdReferenceFrame = -9000001;
+GMAT Long2.OrbitColor = Red;
+GMAT Long2.TargetColor = Teal;
+GMAT Long2.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Long2.CdSigma = 1e+070;
+GMAT Long2.CrSigma = 1e+070;
+GMAT Long2.Id = 'SatId';
+GMAT Long2.Attitude = CoordinateSystemFixed;
+GMAT Long2.SPADSRPScaleFactor = 1;
+GMAT Long2.ModelFile = 'aura.3ds';
+GMAT Long2.ModelOffsetX = 0;
+GMAT Long2.ModelOffsetY = 0;
+GMAT Long2.ModelOffsetZ = 0;
+GMAT Long2.ModelRotationX = 0;
+GMAT Long2.ModelRotationY = 0;
+GMAT Long2.ModelRotationZ = 0;
+GMAT Long2.ModelScale = 1;
+GMAT Long2.AttitudeDisplayStateType = 'Quaternion';
+GMAT Long2.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Long2.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Long2.EulerAngleSequence = '321';
+
+Create Spacecraft Long3;
+GMAT Long3.DateFormat = TAIModJulian;
+GMAT Long3.Epoch = '21545';
+GMAT Long3.CoordinateSystem = EarthMJ2000Eq;
+GMAT Long3.DisplayStateType = Keplerian;
+GMAT Long3.SMA = 42163.99999999998;
+GMAT Long3.ECC = 4.69018883981501e-016;
+GMAT Long3.INC = 0;
+GMAT Long3.RAAN = 0;
+GMAT Long3.AOP = 0;
+GMAT Long3.TA = 120;
+GMAT Long3.DryMass = 850;
+GMAT Long3.Cd = 2.2;
+GMAT Long3.Cr = 1.8;
+GMAT Long3.DragArea = 15;
+GMAT Long3.SRPArea = 1;
+GMAT Long3.NAIFId = -10000001;
+GMAT Long3.NAIFIdReferenceFrame = -9000001;
+GMAT Long3.OrbitColor = Red;
+GMAT Long3.TargetColor = Teal;
+GMAT Long3.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Long3.CdSigma = 1e+070;
+GMAT Long3.CrSigma = 1e+070;
+GMAT Long3.Id = 'SatId';
+GMAT Long3.Attitude = CoordinateSystemFixed;
+GMAT Long3.SPADSRPScaleFactor = 1;
+GMAT Long3.ModelFile = 'aura.3ds';
+GMAT Long3.ModelOffsetX = 0;
+GMAT Long3.ModelOffsetY = 0;
+GMAT Long3.ModelOffsetZ = 0;
+GMAT Long3.ModelRotationX = 0;
+GMAT Long3.ModelRotationY = 0;
+GMAT Long3.ModelRotationZ = 0;
+GMAT Long3.ModelScale = 1;
+GMAT Long3.AttitudeDisplayStateType = 'Quaternion';
+GMAT Long3.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Long3.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Long3.EulerAngleSequence = '321';
+
+Create Spacecraft Long4;
+GMAT Long4.DateFormat = TAIModJulian;
+GMAT Long4.Epoch = '21545';
+GMAT Long4.CoordinateSystem = EarthMJ2000Eq;
+GMAT Long4.DisplayStateType = Keplerian;
+GMAT Long4.SMA = 42163.99999999994;
+GMAT Long4.ECC = 1.128204888721699e-015;
+GMAT Long4.INC = 0;
+GMAT Long4.RAAN = 0;
+GMAT Long4.AOP = 0;
+GMAT Long4.TA = 176.9999999999998;
+GMAT Long4.DryMass = 850;
+GMAT Long4.Cd = 2.2;
+GMAT Long4.Cr = 1.8;
+GMAT Long4.DragArea = 15;
+GMAT Long4.SRPArea = 1;
+GMAT Long4.NAIFId = -10000001;
+GMAT Long4.NAIFIdReferenceFrame = -9000001;
+GMAT Long4.OrbitColor = Red;
+GMAT Long4.TargetColor = Teal;
+GMAT Long4.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Long4.CdSigma = 1e+070;
+GMAT Long4.CrSigma = 1e+070;
+GMAT Long4.Id = 'SatId';
+GMAT Long4.Attitude = CoordinateSystemFixed;
+GMAT Long4.SPADSRPScaleFactor = 1;
+GMAT Long4.ModelFile = 'aura.3ds';
+GMAT Long4.ModelOffsetX = 0;
+GMAT Long4.ModelOffsetY = 0;
+GMAT Long4.ModelOffsetZ = 0;
+GMAT Long4.ModelRotationX = 0;
+GMAT Long4.ModelRotationY = 0;
+GMAT Long4.ModelRotationZ = 0;
+GMAT Long4.ModelScale = 1;
+GMAT Long4.AttitudeDisplayStateType = 'Quaternion';
+GMAT Long4.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Long4.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Long4.EulerAngleSequence = '321';
+
+Create Spacecraft Long5;
+GMAT Long5.DateFormat = TAIModJulian;
+GMAT Long5.Epoch = '21545';
+GMAT Long5.CoordinateSystem = EarthMJ2000Eq;
+GMAT Long5.DisplayStateType = Keplerian;
+GMAT Long5.SMA = 42163.99999999998;
+GMAT Long5.ECC = 3.367453603683968e-016;
+GMAT Long5.INC = 0;
+GMAT Long5.RAAN = 0;
+GMAT Long5.AOP = 0;
+GMAT Long5.TA = 240;
+GMAT Long5.DryMass = 850;
+GMAT Long5.Cd = 2.2;
+GMAT Long5.Cr = 1.8;
+GMAT Long5.DragArea = 15;
+GMAT Long5.SRPArea = 1;
+GMAT Long5.NAIFId = -10000001;
+GMAT Long5.NAIFIdReferenceFrame = -9000001;
+GMAT Long5.OrbitColor = Red;
+GMAT Long5.TargetColor = Teal;
+GMAT Long5.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Long5.CdSigma = 1e+070;
+GMAT Long5.CrSigma = 1e+070;
+GMAT Long5.Id = 'SatId';
+GMAT Long5.Attitude = CoordinateSystemFixed;
+GMAT Long5.SPADSRPScaleFactor = 1;
+GMAT Long5.ModelFile = 'aura.3ds';
+GMAT Long5.ModelOffsetX = 0;
+GMAT Long5.ModelOffsetY = 0;
+GMAT Long5.ModelOffsetZ = 0;
+GMAT Long5.ModelRotationX = 0;
+GMAT Long5.ModelRotationY = 0;
+GMAT Long5.ModelRotationZ = 0;
+GMAT Long5.ModelScale = 1;
+GMAT Long5.AttitudeDisplayStateType = 'Quaternion';
+GMAT Long5.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Long5.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Long5.EulerAngleSequence = '321';
+
+Create Spacecraft Long6;
+GMAT Long6.DateFormat = TAIModJulian;
+GMAT Long6.Epoch = '21545';
+GMAT Long6.CoordinateSystem = EarthMJ2000Eq;
+GMAT Long6.DisplayStateType = Keplerian;
+GMAT Long6.SMA = 42163.99999999996;
+GMAT Long6.ECC = 8.999694372742087e-016;
+GMAT Long6.INC = 0;
+GMAT Long6.RAAN = 0;
+GMAT Long6.AOP = 0;
+GMAT Long6.TA = 264.5;
+GMAT Long6.DryMass = 850;
+GMAT Long6.Cd = 2.2;
+GMAT Long6.Cr = 1.8;
+GMAT Long6.DragArea = 15;
+GMAT Long6.SRPArea = 1;
+GMAT Long6.NAIFId = -10000001;
+GMAT Long6.NAIFIdReferenceFrame = -9000001;
+GMAT Long6.OrbitColor = Red;
+GMAT Long6.TargetColor = Teal;
+GMAT Long6.OrbitErrorCovariance = [ 1e+070 0 0 0 0 0 ; 0 1e+070 0 0 0 0 ; 0 0 1e+070 0 0 0 ; 0 0 0 1e+070 0 0 ; 0 0 0 0 1e+070 0 ; 0 0 0 0 0 1e+070 ];
+GMAT Long6.CdSigma = 1e+070;
+GMAT Long6.CrSigma = 1e+070;
+GMAT Long6.Id = 'SatId';
+GMAT Long6.Attitude = CoordinateSystemFixed;
+GMAT Long6.SPADSRPScaleFactor = 1;
+GMAT Long6.ModelFile = 'aura.3ds';
+GMAT Long6.ModelOffsetX = 0;
+GMAT Long6.ModelOffsetY = 0;
+GMAT Long6.ModelOffsetZ = 0;
+GMAT Long6.ModelRotationX = 0;
+GMAT Long6.ModelRotationY = 0;
+GMAT Long6.ModelRotationZ = 0;
+GMAT Long6.ModelScale = 1;
+GMAT Long6.AttitudeDisplayStateType = 'Quaternion';
+GMAT Long6.AttitudeRateDisplayStateType = 'AngularVelocity';
+GMAT Long6.AttitudeCoordinateSystem = EarthMJ2000Eq;
+GMAT Long6.EulerAngleSequence = '321';
+
+%----------------------------------------
+%---------- ForceModels
+%----------------------------------------
+
+Create ForceModel DefaultProp_ForceModel;
+GMAT DefaultProp_ForceModel.CentralBody = Earth;
+GMAT DefaultProp_ForceModel.PrimaryBodies = {Earth};
+GMAT DefaultProp_ForceModel.PointMasses = {Luna, Sun};
+GMAT DefaultProp_ForceModel.SRP = On;
+GMAT DefaultProp_ForceModel.RelativisticCorrection = Off;
+GMAT DefaultProp_ForceModel.ErrorControl = RSSStep;
+GMAT DefaultProp_ForceModel.GravityField.Earth.Degree = 5;
+GMAT DefaultProp_ForceModel.GravityField.Earth.Order = 5;
+GMAT DefaultProp_ForceModel.GravityField.Earth.StmLimit = 100;
+GMAT DefaultProp_ForceModel.GravityField.Earth.PotentialFile = 'JGM2.cof';
+GMAT DefaultProp_ForceModel.GravityField.Earth.TideModel = 'None';
+GMAT DefaultProp_ForceModel.Drag.AtmosphereModel = JacchiaRoberts;
+GMAT DefaultProp_ForceModel.Drag.HistoricWeatherSource = 'ConstantFluxAndGeoMag';
+GMAT DefaultProp_ForceModel.Drag.PredictedWeatherSource = 'ConstantFluxAndGeoMag';
+GMAT DefaultProp_ForceModel.Drag.CSSISpaceWeatherFile = 'SpaceWeather-All-v1.2.txt';
+GMAT DefaultProp_ForceModel.Drag.SchattenFile = 'SchattenPredict.txt';
+GMAT DefaultProp_ForceModel.Drag.F107 = 150;
+GMAT DefaultProp_ForceModel.Drag.F107A = 150;
+GMAT DefaultProp_ForceModel.Drag.MagneticIndex = 3;
+GMAT DefaultProp_ForceModel.Drag.SchattenErrorModel = 'Nominal';
+GMAT DefaultProp_ForceModel.Drag.SchattenTimingModel = 'NominalCycle';
+GMAT DefaultProp_ForceModel.SRP.Flux = 1367;
+GMAT DefaultProp_ForceModel.SRP.SRPModel = Spherical;
+GMAT DefaultProp_ForceModel.SRP.Nominal_Sun = 149597870.691;
+
+%----------------------------------------
+%---------- Propagators
+%----------------------------------------
+
+Create Propagator DefaultProp;
+GMAT DefaultProp.FM = DefaultProp_ForceModel;
+GMAT DefaultProp.Type = RungeKutta89;
+GMAT DefaultProp.InitialStepSize = 60;
+GMAT DefaultProp.Accuracy = 9.999999999999999e-012;
+GMAT DefaultProp.MinStep = 0.001;
+GMAT DefaultProp.MaxStep = 2700;
+GMAT DefaultProp.MaxStepAttempts = 50;
+GMAT DefaultProp.StopIfAccuracyIsViolated = true;
+
+%----------------------------------------
+%---------- Subscribers
+%----------------------------------------
+
+Create OrbitView DefaultOrbitView;
+GMAT DefaultOrbitView.SolverIterations = Current;
+GMAT DefaultOrbitView.UpperLeft = [ 0.004725897920604915 0 ];
+GMAT DefaultOrbitView.Size = [ 0.5 0.450653983353151 ];
+GMAT DefaultOrbitView.RelativeZOrder = 39;
+GMAT DefaultOrbitView.Maximized = false;
+GMAT DefaultOrbitView.Add = {Long1, Long2, Long3, Long4, Long5, Long6, Earth, Luna, Sun};
+GMAT DefaultOrbitView.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.DrawObject = [ true true true true true true true true true ];
+GMAT DefaultOrbitView.DataCollectFrequency = 1;
+GMAT DefaultOrbitView.UpdatePlotFrequency = 50;
+GMAT DefaultOrbitView.NumPointsToRedraw = 0;
+GMAT DefaultOrbitView.ShowPlot = true;
+GMAT DefaultOrbitView.MaxPlotPoints = 20000;
+GMAT DefaultOrbitView.ShowLabels = true;
+GMAT DefaultOrbitView.ViewPointReference = Earth;
+GMAT DefaultOrbitView.ViewPointVector = [ 0 0 50000 ];
+GMAT DefaultOrbitView.ViewDirection = Earth;
+GMAT DefaultOrbitView.ViewScaleFactor = 1;
+GMAT DefaultOrbitView.ViewUpCoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultOrbitView.ViewUpAxis = Z;
+GMAT DefaultOrbitView.EclipticPlane = Off;
+GMAT DefaultOrbitView.XYPlane = On;
+GMAT DefaultOrbitView.WireFrame = Off;
+GMAT DefaultOrbitView.Axes = On;
+GMAT DefaultOrbitView.Grid = Off;
+GMAT DefaultOrbitView.SunLine = Off;
+GMAT DefaultOrbitView.UseInitialView = On;
+GMAT DefaultOrbitView.StarCount = 7000;
+GMAT DefaultOrbitView.EnableStars = On;
+GMAT DefaultOrbitView.EnableConstellations = On;
+
+Create GroundTrackPlot DefaultGroundTrackPlot;
+GMAT DefaultGroundTrackPlot.SolverIterations = Current;
+GMAT DefaultGroundTrackPlot.UpperLeft = [ 0.004725897920604915 0.455410225921522 ];
+GMAT DefaultGroundTrackPlot.Size = [ 0.5 0.450653983353151 ];
+GMAT DefaultGroundTrackPlot.RelativeZOrder = 44;
+GMAT DefaultGroundTrackPlot.Maximized = false;
+GMAT DefaultGroundTrackPlot.Add = {Long1, Long2, Long3, Long4, Long5, Long6};
+GMAT DefaultGroundTrackPlot.DataCollectFrequency = 1;
+GMAT DefaultGroundTrackPlot.UpdatePlotFrequency = 50;
+GMAT DefaultGroundTrackPlot.NumPointsToRedraw = 0;
+GMAT DefaultGroundTrackPlot.ShowPlot = true;
+GMAT DefaultGroundTrackPlot.MaxPlotPoints = 20000;
+GMAT DefaultGroundTrackPlot.CentralBody = Earth;
+GMAT DefaultGroundTrackPlot.TextureMap = 'ModifiedBlueMarble.jpg';
+
+Create XYPlot XYPlot1;
+GMAT XYPlot1.SolverIterations = Current;
+GMAT XYPlot1.UpperLeft = [ 0.5085066162570888 0.1950059453032105 ];
+GMAT XYPlot1.Size = [ 0.5 0.450653983353151 ];
+GMAT XYPlot1.RelativeZOrder = 170;
+GMAT XYPlot1.Maximized = false;
+GMAT XYPlot1.XVariable = Long1.ElapsedDays;
+GMAT XYPlot1.YVariables = {Long1.Earth.Longitude, Long2.Earth.Longitude, Long3.Earth.Longitude, Long4.Earth.Longitude, Long5.Earth.Longitude, Long6.Earth.Longitude};
+GMAT XYPlot1.ShowGrid = true;
+GMAT XYPlot1.ShowPlot = true;
+
+Create ReportFile ReportFile1;
+GMAT ReportFile1.SolverIterations = Current;
+GMAT ReportFile1.UpperLeft = [ 0 0 ];
+GMAT ReportFile1.Size = [ 0 0 ];
+GMAT ReportFile1.RelativeZOrder = 0;
+GMAT ReportFile1.Maximized = false;
+GMAT ReportFile1.Filename = 'TrialLong.txt';
+GMAT ReportFile1.Precision = 16;
+GMAT ReportFile1.Add = {Long1.ElapsedDays, Long1.Earth.Longitude, Long2.Earth.Longitude, Long3.Earth.Longitude, Long4.Earth.Longitude, Long5.Earth.Longitude, Long6.Earth.Longitude};
+GMAT ReportFile1.WriteHeaders = false;
+GMAT ReportFile1.LeftJustify = On;
+GMAT ReportFile1.ZeroFill = Off;
+GMAT ReportFile1.FixedWidth = false;
+GMAT ReportFile1.Delimiter = ',';
+GMAT ReportFile1.ColumnWidth = 23;
+GMAT ReportFile1.WriteReport = true;
+
+
+%----------------------------------------
+%---------- Mission Sequence
+%----------------------------------------
+
+BeginMissionSequence;
+Propagate DefaultProp(Long1, Long2, Long3, Long4, Long5, Long6) {Long1.ElapsedDays = 2190};

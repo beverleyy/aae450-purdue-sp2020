@@ -1,0 +1,9 @@
+function dz = cartgravity(t,z)
+dz = zeros(6,1);
+mu = -398600.4415;;
+dz(1) = z(2); % vel in x
+dz(2) = ((mu)/(sqrt(z(1)^2+z(3)^2+z(5)^2)^3)*z(1)); % accel in x
+dz(3) = z(4); % vel in y
+dz(4) = ((mu)/(sqrt(z(1)^2+z(3)^2+z(5)^2)^3)*z(3)); % accel in y
+dz(5) = z(6); % vel in z
+dz(6) = ((mu)/(sqrt(z(1)^2+z(3)^2+z(5)^2)^3)*z(5)); % accel in z
