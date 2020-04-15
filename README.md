@@ -1,14 +1,12 @@
 # AAE 450 - Spring 2020
 Codes for Purdue University School of Aeronautics &amp; Astronautics AAE450 Senior Spacecraft Design course, Spring 2020
 
-## Instructions
-Please upload your codes into a subfolder in your discipline, labelled with your name. 
+## Project Escalator
+Project Escalator is a project from the AAE450 Senior Spacecraft Design course offered at Purdue University's School of Aeronautics and Astronautics for the Spring 2020 semester.
 
-An example of the path for my code would be:
+The objectives of this project are to investigate the use of tether slings, electrodynamic tethers and mass drivers as propellantless propulsion technologies, as well as to investigate the new cycler trajectory (Hybrid S1L1) as a human transportation system to and from Mars. The project also aims to consider locations for (nearly) propellantless technologies including LEO, the Moon, Phobos, Mars surface (e.g. Olympus Mons), and others.
 
-> aae450-purdue-sp2020/**Controls/beverley_yeo/calcforces.m**
-    
-The parts in bold would be what you need to change.
-If there is no folder for your discipline yet, feel free to make one.
-Discipline folders are **CASE-SENSITIVE**, please remember to capitalize the folder name! 
-Whether you want to capitalize your name or not is up to you, but please replace spaces with an *underscore* (e.g. beverley yeo --> beverley_yeo)
+Website: [https://engineering.purdue.edu/AAECourses/aae450/2020/Spring 2020](https://engineering.purdue.edu/AAECourses/aae450/2020/Spring%202020)
+
+## This repository
+This repository serves as a digital archive of all MATLAB codes, Simulink files and spreadsheets made by the Project Escalator student design team. It is classified according to discipline, and then by member.
